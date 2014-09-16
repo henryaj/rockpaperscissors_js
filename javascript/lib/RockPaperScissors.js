@@ -1,9 +1,9 @@
 // GAME
 
 var PAIRS = {
-	rock: {beats: 'scissors'},
-	paper: {beats: 'rock'},
-	scissors: {beats: 'paper'},
+	rock: 		{ beats: 'scissors' },
+	paper: 		{ beats: 'rock' },
+	scissors: { beats: 'paper' },
 }
 
 function Game(player1, player2) {
@@ -15,7 +15,7 @@ function Game(player1, player2) {
 Game.prototype.winner = function() {
 	// in Ruby, the last line in a method is the return value.
 	// not so in JS! You have to return it manually, like below.
-	if(this.same_pick() === true) {
+	if(this.isSamePick() === true) {
 		return null;
 	}
 	if(PAIRS[this.player1.pick].beats === this.player2.pick){
@@ -26,7 +26,7 @@ Game.prototype.winner = function() {
 	}
 };
 
-Game.prototype.same_pick = function() {
+Game.prototype.isSamePick = function() {
 	if(this.player1.pick === this.player2.pick){
 		return true;
 	}
