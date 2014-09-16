@@ -3,9 +3,9 @@
 var BEATS = {
 	rock: 		{play: ['scissors', 'lizard'], 	verb: ['blunts','crushes']			 },
 	paper: 		{play: ['rock', 'spock'], 			verb: ['covers','disproves']		 },
-	scissors: {play: ['lizard', 'paper'], 		verb: ['decapitate','cut']			 },
+	scissors: {play: ['lizard', 'paper'], 		verb: ['decapitates','cuts']			 },
 	lizard:   {play: ['spock', 'paper'], 			verb: ['poisons','eats']				 },
-	spock:    {play: ['scissors', 'rock'], 		verb: ['incinerates','fucks up'] }
+	spock:    {play: ['scissors', 'rock'], 		verb: ['incinerates','vaporises'] }
 }
 
 
@@ -28,10 +28,10 @@ Game.prototype.winner = function() {
 	else {
 		return this.player2;
 	}
-};
+};	
 
 Game.prototype.loser = function() {
-	if(this.winner === this.player1){
+	if(this.winner() === this.player1){
 		return this.player2;
 	}
 	else {

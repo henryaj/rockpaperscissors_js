@@ -3,6 +3,7 @@
   <head>
     <title>Rock Paper Scissors Lizard Spock</title>
     <link href='style.css' rel='stylesheet'>
+
   </head>
   <body>
     <h1>Rock Paper Scissors Lizard Spock</h1>
@@ -16,32 +17,11 @@
     <ul id='results'>
     </ul>
 
-    <script src="http://documentcloud.github.io/underscore/underscore.js"></script>
     <script src='lib/jquery-2.1.1.min.js'></script>
+    <script src="lib/jquery.jrumble.1.3.js"></script>
+    <script src="http://underscorejs.org/underscore-min.js"></script>
     <script src='lib/RockPaperScissors.js'></script>
-    <script>
-    $(document).ready(function(){
-      var p1 = new Player('Alex');
-      var p2 = new Player('Mihai');
-      var game = new Game(p1, p2);
-
-      $('.choices img').on('click', function(){
-        p1.picks($(this).data('pick'));
-        p2.picks('paper');
-
-        // $('#results').prepend('<li>' + game.winningMessage() + '</li>');
-        $("<li>" + game.winningMessage() + "</li>").prependTo('#results').slideDown();
-
-        $("#results li:gt(3)").fadeOut(function(){
-          $(this).remove();
-          console.log('A')
-        });
-        console.log('B')
-
-      })
-    })
-    </script>
-
+    <script src='interface.js'></script>
   </body>
 </html>
 
