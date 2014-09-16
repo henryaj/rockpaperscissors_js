@@ -5,8 +5,10 @@ function Player(name) {
 	this.name = name; // use 'this' instead of Ruby '@'
 }
 
-function Game() {
+function Game(player1, player2) {
 	// defining the Game class.
+	this.player1 = player1;
+	this.player2 = player2;
 }
 
 // in JS, you define methods *outside* of classes. Weird!
@@ -19,5 +21,5 @@ Player.prototype.picks = function(pick) {
 Game.prototype.winner = function() {
 	// in Ruby, the last line in a method is the return value.
 	// not so in JS! You have to return it manually, like below.
-	return player1;
+	return this.player1;
 };
