@@ -7,12 +7,14 @@ var PAIRS = {
 }
 
 var BEATS = {
-	rock: 		['scissors', 'lizard'],
-	paper: 		['rock', 'spock'],
-	scissors: ['lizard', 'paper'],
-	lizard:   ['spock', 'paper'],
-	spock:    ['scissors', 'rock']
+	rock: 		{play: ['scissors', 'lizard'], verb: ['blunts','crushes']},
+	paper: 		{play: ['rock', 'spock'], verb: ['covers','disproves']},
+	scissors: {play: ['lizard', 'paper'], verb: ['decapitate','cut']},
+	lizard:   {play: ['spock', 'paper'], verb: ['poisons','eats']},
+	spock:    {play: ['scissors', 'rock'], verb: ['incinerates','fucks up']}
 }
+
+
 
 function Game(player1, player2) {
 	// defining the Game class.
@@ -26,7 +28,7 @@ Game.prototype.winner = function() {
 	if(this.isSamePick() === true) {
 		return null;
 	}
-	if(_.contains(BEATS[this.player1.pick], this.player2.pick)){
+	if(_.contains((BEATS[this.player1.pick]).play, this.player2.pick)){
 		return this.player1;
 	}
 	else {
@@ -34,10 +36,37 @@ Game.prototype.winner = function() {
 	}
 };
 
+Game.prototype.loser = function() {
+	if(this.winner === this.player1){
+		return this.player2;
+	}
+	else {
+		return this.player1;
+	}
+};
+
 Game.prototype.isSamePick = function() {
 	if(this.player1.pick === this.player2.pick){
 		return true;
 	}
+};
+
+Game.prototype.winningVerb = function() {
+	console.log(this.winner().pick);
+	console.log(BEATS[this.winner().pick].verb[0]);
+	console.log();
+	console.log();
+
+	if(BEATS[this.winner().pick].play[0] === this.loser().pick){
+		return BEATS[this.winner().pick].verb[0]
+	}
+	else {
+		return BEATS[this.winner().pick].verb[1]	
+	}
+};
+
+Game.prototype.winningMessage = function() {
+	return ((this.winner()).name + " " + this.winningVerb() + " " + (this.loser()).name);
 };
 
 
