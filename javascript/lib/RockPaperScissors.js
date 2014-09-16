@@ -15,7 +15,9 @@ function Game(player1, player2) {
 Game.prototype.winner = function() {
 	// in Ruby, the last line in a method is the return value.
 	// not so in JS! You have to return it manually, like below.
-	
+	if(this.same_pick() === true) {
+		return null;
+	}
 	if(PAIRS[this.player1.pick].beats === this.player2.pick){
 		return this.player1;
 	}
