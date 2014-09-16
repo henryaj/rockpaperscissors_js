@@ -1,10 +1,16 @@
 describe("Rock-Paper-Scissors", function() {
 
+  // this initialises these local variables
+  // you have to do this here because otherwise these
+  // three variables will be trapped inside the scope of
+  // the beforeEach function.
+  var player1, player2, game;
+
   beforeEach(function() {
 
-    player1 = new Player();
-    player2 = new Player();
-    game = new Game(player1, player2);
+    var player1 = new Player();
+    var player2 = new Player();
+    var game = new Game(player1, player2);
 
   });
 
