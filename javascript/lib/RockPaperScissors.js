@@ -6,6 +6,14 @@ var PAIRS = {
 	scissors: { beats: 'paper' },
 }
 
+var BEATS = {
+	rock: 		['scissors', 'lizard'],
+	paper: 		['rock', 'spock'],
+	scissors: ['lizard', 'paper'],
+	lizard:   ['spock', 'paper'],
+	spock:    ['scissors', 'rock']
+}
+
 function Game(player1, player2) {
 	// defining the Game class.
 	this.player1 = player1;
@@ -18,7 +26,7 @@ Game.prototype.winner = function() {
 	if(this.isSamePick() === true) {
 		return null;
 	}
-	if(PAIRS[this.player1.pick].beats === this.player2.pick){
+	if(_.contains(BEATS[this.player1.pick], this.player2.pick)){
 		return this.player1;
 	}
 	else {
