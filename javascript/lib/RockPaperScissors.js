@@ -16,6 +16,8 @@ Player.prototype.picks = function(pick) {
 	// body...
 };
 
-Game.prototype.winner = function(first_argument) {
-	// body...
+Game.prototype.winner = function() {
+	// in Ruby, the last line in a method is the return value.
+	// not so in JS! You have to return it manually, like below.
+	return player1;
 };
