@@ -1,6 +1,8 @@
-function Player() {
+function Player(name) {
 	// here, function is acting like 'class' in Ruby.
 	// this is defining the Player class.
+	// an initialize method goes here.
+	this.name = name; // use 'this' instead of Ruby '@'
 }
 
 function Game() {
