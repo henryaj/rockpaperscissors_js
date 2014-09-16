@@ -1,11 +1,5 @@
 // GAME
 
-var PAIRS = {
-	rock: 		{ beats: 'scissors' },
-	paper: 		{ beats: 'rock' },
-	scissors: { beats: 'paper' },
-}
-
 var BEATS = {
 	rock: 		{play: ['scissors', 'lizard'], verb: ['blunts','crushes']},
 	paper: 		{play: ['rock', 'spock'], verb: ['covers','disproves']},
