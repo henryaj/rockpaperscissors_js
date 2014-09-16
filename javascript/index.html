@@ -16,9 +16,9 @@
     <ul id='results'>
     </ul>
 
-    <script src='lib/Player.js'></script>
-    <script src='lib/Game.js'></script>
+    <script src="http://documentcloud.github.io/underscore/underscore.js"></script>
     <script src='lib/jquery-2.1.1.min.js'></script>
+    <script src='lib/RockPaperScissors.js'></script>
     <script>
     $(document).ready(function(){
       var p1 = new Player('Alex');
@@ -27,9 +27,8 @@
 
       $('.choices img').on('click', function(){
         p1.picks($(this).data('pick'));
-        p2.picks('rock');
+        p2.picks('paper');
 
-        console.log('Hello')
         // $('#results').prepend('<li>' + game.winningMessage() + '</li>');
         $("<li>" + game.winningMessage() + "</li>").prependTo('#results').slideDown();
 
