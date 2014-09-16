@@ -7,10 +7,11 @@ describe("Rock-Paper-Scissors", function() {
   var player1, player2, game;
 
   beforeEach(function() {
-
-    var player1 = new Player();
-    var player2 = new Player();
-    var game = new Game(player1, player2);
+    // you don't need to use 'var' here because
+    // we've already defined these variables above.
+    player1 = new Player("Henry");
+    player2 = new Player("John");
+    game = new Game(player1, player2);
 
   });
 
